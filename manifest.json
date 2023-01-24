@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail HTML Inserter",
+  "description": "Add right-click context menu action to insert html from clipboard into Gmail messages.",
+  "version": "0.1",
+  "icons": {
+    "16": "images/logo16.png",
+    "32": "images/logo32.png",
+    "48": "images/logo48.png",
+    "128": "images/logo128.png"
+  },
+  "permissions" : [
+    "contextMenus",
+    "activeTab"
+  ],
+  "background" : {
+    "service_worker": "menu.js"
+  },
+  "content_scripts" : [
+    {
+        "matches": ["*://mail.google.com/mail/*"],
+        "js" : ["content.js"]
+    }
+  ]
+}
